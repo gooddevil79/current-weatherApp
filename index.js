@@ -1,9 +1,12 @@
 'use strict';
+// DOM selection
 const form = document.querySelector('.form');
 const input = document.querySelector('.form__input-name');
 const btn = document.querySelector('.form__btn');
 const weatherCardContainer = document.querySelector('.weather');
-let closeBtn;
+// ///////////////////////////////////////////
+let closeBtn; // will update in eatch request for data
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const cityName = input.value;
@@ -14,7 +17,10 @@ form.addEventListener('submit', function (e) {
     }, 400);
     return;
   }
-  console.log(cityName);
+  // console.log(cityName);
+  // clearing
+  input.blur();
+  input.value = '';
   fetch(
     `https://api.weatherapi.com/v1/current.json?key=0f0a61cbd0fc4dbda32202540220906&q=${cityName}&aqi=no`
   )
