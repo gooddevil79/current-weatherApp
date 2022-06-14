@@ -16,7 +16,7 @@ form.addEventListener('submit', function (e) {
   }
   console.log(cityName);
   fetch(
-    `http://api.weatherapi.com/v1/current.json?key=0f0a61cbd0fc4dbda32202540220906&q=${cityName}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=0f0a61cbd0fc4dbda32202540220906&q=${cityName}&aqi=no`
   )
     .then(respone => {
       console.log(respone);
