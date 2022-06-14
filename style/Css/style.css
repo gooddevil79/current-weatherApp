@@ -1,0 +1,174 @@
+@import url(/style/fonts/fonts.css);
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none; }
+
+.container {
+  padding: 2rem;
+  height: 91vh;
+  background: #73c8a9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #373b44, #73c8a9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #373b44, #73c8a9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0 auto;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: #75757575 0px 0px 20px 4px; }
+
+html {
+  font-size: 10px; }
+
+body {
+  padding: 1rem;
+  overflow: hidden; }
+
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.container__logo {
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 40rem; }
+  .container__logo h4 {
+    font-family: "Dancing Script", cursive;
+    color: #73c8a9;
+    text-shadow: 2px 1px #373b44;
+    font-size: 3rem; }
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  max-width: 40rem;
+  height: 4rem;
+  border-bottom: 0.1rem #fff solid; }
+
+.form__input-name {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  padding: 1rem;
+  width: 100%; }
+
+.form__input-name::placeholder {
+  color: rgba(255, 255, 255, 0.585); }
+
+.form__btn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  height: 100%; }
+
+.weather {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 80%;
+  min-height: 10rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 35rem));
+  justify-content: center;
+  transition: all ease 1s;
+  gap: 1.5rem;
+  padding: 2rem; }
+
+.weather::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #73c8a9;
+  border-radius: 50px; }
+
+.weather::-webkit-scrollbar-thumb {
+  background-color: #373b44;
+  border-radius: 50px; }
+
+.weather__card {
+  position: relative;
+  background: #74ebd5;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #acb6e5, #74ebd5);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #acb6e5, #74ebd5);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-family: "Comfortaa", cursive;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  transition: all ease 0.2s;
+  box-shadow: 0px 0.1rem 1rem 0px #acb6e545;
+  opacity: 1;
+  height: 23rem;
+  cursor: pointer; }
+  .weather__card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0.5rem 1rem 1rem 0px #acb6e545; }
+
+.hidden {
+  opacity: 0; }
+
+.weather__card__details__city-name {
+  font-size: 2.5rem; }
+
+.weather__card__details__temp {
+  text-align: center;
+  font-size: 6rem;
+  padding: 1rem;
+  height: 100px;
+  line-height: 100px; }
+
+.weather__card__sky-status {
+  justify-self: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  justify-content: center;
+  align-items: center; }
+
+.weather__card__sky-status__text {
+  font-size: 2.5rem; }
+
+.alert {
+  border-color: red;
+  position: relative; }
+  .alert::before {
+    content: 'No matching location found :(';
+    position: absolute;
+    bottom: -2.3rem;
+    left: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: "Comfortaa", cursive;
+    color: #ff1443;
+    text-shadow: 1px 0px rgba(194, 188, 188, 0.525); }
+
+.weather__card__close-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  z-index: 1;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; }
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .container__logo {
+    display: flex; } }
